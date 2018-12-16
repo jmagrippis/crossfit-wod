@@ -2,10 +2,11 @@
   "name": "crossfit-wod-web",
   "version": "0.1.0",
   "private": true,
+  "description": "Web version to see the WODs",
   "scripts": {
     "start": "parcel src/index.html -p 3010",
     "build": "parcel build src/index.html",
-    "deploy": "yarn build && gcloud app deploy --project=crossfit-wod"
+    "deploy": "yarn build && gcloud app deploy --project=crossfit-wod-0"
   },
   "license": "MIT",
   "devDependencies": {

@@ -8,7 +8,7 @@
     "dev": "PORT=3011 ./startDev.sh",
     "test": "jest",
     "build": "NODE_ENV=production tsc",
-    "deploy": "yarn build && gcloud app deploy --project=crossfit-wod"
+    "deploy": "yarn build && gcloud app deploy --project=crossfit-wod-0"
   },
   "dependencies": {
     "apollo-server": "^2.3.1",
