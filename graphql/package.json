@@ -4,7 +4,7 @@
   "description": "The graphql server for crossfit-wod",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node -r dotenv/config ./build/index.js",
+    "start": "node -r dotenv/config ./dist/index.js",
     "dev": "PORT=3011 ./startDev.sh",
     "test": "jest",
     "build": "NODE_ENV=production tsc",

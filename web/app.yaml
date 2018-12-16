@@ -1,5 +1,8 @@
 runtime: nodejs10
 service: default
+env_variables:
+  NODE_ENV: production
+  GRAPHQL: https://graphql-dot-crossfit-wod-0.appspot.com/
 
 handlers:
   - url: /(.*\.(css|eot|gz|html|ico|js|map|png|svg|ttf|woff|woff2))
