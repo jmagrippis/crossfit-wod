@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node -r dotenv/config ./dist/index.js",
     "dev": "PORT=3012 ./startDev.sh",
+    "test": "jest",
     "build": "NODE_ENV=production tsc",
     "deploy": "yarn build && gcloud app deploy --project=crossfit-wod"
   },
@@ -17,14 +18,37 @@
     "express": "^5.0.0-0",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.10.0",
-    "node-fetch": "^2.3.0"
+    "moment": "^2.23.0",
+    "node-fetch": "^2.3.0",
+    "puppeteer": "^1.11.0"
   },
   "devDependencies": {
     "@types/dotenv": "^6.1.0",
     "@types/express": "^4.16.0",
+    "@types/jest": "^23.3.10",
     "@types/node-fetch": "^2.1.4",
+    "@types/puppeteer": "^1.11.1",
+    "jest": "^23.6.0",
     "nodemon": "^1.18.9",
+    "ts-jest": "^23.10.5",
     "typescript": "^3.2.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "**/?(*.)+(spec|test).(js|ts)"
+    ]
   },
   "license": "MIT"
 }

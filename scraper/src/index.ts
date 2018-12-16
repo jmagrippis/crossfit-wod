@@ -1,7 +1,7 @@
 import express from 'express'
 
 import { auth } from './auth'
-import { latestNotPersisted } from './latestNotPersisted'
+import { latestNotPersisted } from './handlers/latestNotPersisted'
 
 const server = express()
 
