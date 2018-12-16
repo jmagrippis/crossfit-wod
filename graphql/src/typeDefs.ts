@@ -8,9 +8,21 @@ export const typeDefs = gql`
     rest
   }
 
+  type Location {
+    name: String!
+    url: String!
+  }
+
+  type WodImage {
+    url: String!
+    credit: String
+    location: Location
+  }
+
   type Wod {
     id: Int!
     type: WodType!
+    image: WodImage!
   }
 
   type Query {

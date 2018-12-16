@@ -29,6 +29,22 @@ export interface Wod {
   id: number;
 
   type: WodType;
+
+  image: WodImage;
+}
+
+export interface WodImage {
+  url: string;
+
+  credit?: string | null;
+
+  location?: Location | null;
+}
+
+export interface Location {
+  name: string;
+
+  url: string;
 }
 
 export interface Mutation {
