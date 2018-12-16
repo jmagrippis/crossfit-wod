@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "parcel src/index.html -p 5010",
+    "start": "parcel src/index.html -p 3010",
     "build": "parcel build src/index.html",
     "deploy": "yarn build && gcloud app deploy --project=crossfit-wod"
   },

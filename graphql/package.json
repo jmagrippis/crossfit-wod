@@ -1,0 +1,47 @@
+{
+  "name": "crossfit-wod-graphql",
+  "version": "0.1.0",
+  "description": "The graphql server for crossfit-wod",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node -r dotenv/config ./build/index.js",
+    "dev": "PORT=3011 ./startDev.sh",
+    "test": "jest",
+    "build": "NODE_ENV=production tsc",
+    "deploy": "yarn build && gcloud app deploy --project=crossfit-wod"
+  },
+  "dependencies": {
+    "apollo-server": "^2.3.1",
+    "dotenv": "^6.2.0",
+    "graphql": "^14.0.2",
+    "moment": "^2.23.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.0",
+    "@types/graphql": "^14.0.3",
+    "@types/jest": "^23.3.10",
+    "@types/zen-observable": "^0.8.0",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.9",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.2.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "**/?(*.)+(spec|test).(js|ts)"
+    ]
+  },
+  "license": "MIT"
+}
