@@ -1,4 +1,4 @@
-import { gql } from "apollo-server";
+import { gql } from 'apollo-server'
 
 export const typeDefs = gql`
   enum WodType {
@@ -33,4 +33,4 @@ export const typeDefs = gql`
   type Mutation {
     createWod(id: Int!, type: WodType!): Wod!
   }
-`;
+`

@@ -1,6 +1,5 @@
-import moment from "moment";
+import moment from 'moment'
 
-const DATE_DB_FORMAT = "YYMMDD";
+const DATE_DB_FORMAT = 'YYMMDD'
 
-export const getMomentFromWodId = (id: number) =>
-  moment.utc(id, DATE_DB_FORMAT);
+export const getMomentFromWodId = (id: number) => moment.utc(id, DATE_DB_FORMAT)

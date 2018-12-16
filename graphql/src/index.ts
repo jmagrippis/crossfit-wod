@@ -1,25 +1,25 @@
-import { ApolloServer } from "apollo-server";
+import { ApolloServer } from 'apollo-server'
 
-import { typeDefs } from "./typeDefs";
-import { resolvers } from "./resolvers";
-(async () => {
+import { typeDefs } from './typeDefs'
+import { resolvers } from './resolvers'
+;(async () => {
   const engine =
-    process.env.NODE_ENV === "production" && process.env.ENGINE_API_KEY
+    process.env.NODE_ENV === 'production' && process.env.ENGINE_API_KEY
       ? {
           apiKey: process.env.ENGINE_API_KEY
         }
-      : undefined;
+      : undefined
 
   const apolloOptions = {
     typeDefs,
     resolvers,
     engine,
     introspection: true
-  };
+  }
 
-  const server = new ApolloServer(apolloOptions);
+  const server = new ApolloServer(apolloOptions)
 
-  const { url } = await server.listen({ port: process.env.PORT });
+  const { url } = await server.listen({ port: process.env.PORT })
 
-  console.log(`🚀 Server ready at ${url}`);
-})();
+  console.log(`🚀 Server ready at ${url}`)
+})()

@@ -1,17 +1,17 @@
 export enum WodType {
-  Time = "time",
-  Load = "load",
-  Rounds = "rounds",
-  Rest = "rest"
+  Time = 'time',
+  Load = 'load',
+  Rounds = 'rounds',
+  Rest = 'rest'
 }
 
 export enum CacheControlScope {
-  Public = "PUBLIC",
-  Private = "PRIVATE"
+  Public = 'PUBLIC',
+  Private = 'PRIVATE'
 }
 
 /** The `Upload` scalar type represents a file upload. */
-export type Upload = any;
+export type Upload = any
 
 // ====================================================
 // Scalars
@@ -22,35 +22,35 @@ export type Upload = any;
 // ====================================================
 
 export interface Query {
-  getWod?: Wod | null;
+  getWod?: Wod | null
 
-  latestWod: Wod;
+  latestWod: Wod
 }
 
 export interface Wod {
-  id: number;
+  id: number
 
-  type: WodType;
+  type: WodType
 
-  image: WodImage;
+  image: WodImage
 }
 
 export interface WodImage {
-  url: string;
+  url: string
 
-  credit?: string | null;
+  credit?: string | null
 
-  location?: Location | null;
+  location?: Location | null
 }
 
 export interface Location {
-  name: string;
+  name: string
 
-  url: string;
+  url: string
 }
 
 export interface Mutation {
-  createWod: Wod;
+  createWod: Wod
 }
 
 // ====================================================
@@ -58,10 +58,10 @@ export interface Mutation {
 // ====================================================
 
 export interface GetWodQueryArgs {
-  id: number;
+  id: number
 }
 export interface CreateWodMutationArgs {
-  id: number;
+  id: number
 
-  type: WodType;
+  type: WodType
 }
