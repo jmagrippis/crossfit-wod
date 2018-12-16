@@ -5,6 +5,7 @@ import moment from 'moment'
 import { getWodIdFromMoment } from '../utils/getWodIdFromMoment'
 import { getWodUrlFromId } from '../utils/getWodUrlFromId'
 import { getImageFromPage } from './getImageFromPage'
+import { getWodTypeFromPage } from './getWodTypeFromPage'
 
 export const latestNotPersisted = async (req: Request, res: Response) => {
   const browser = await puppeteer.launch()
@@ -15,21 +16,29 @@ export const latestNotPersisted = async (req: Request, res: Response) => {
     // TODO: check if WOD already persisted
 
     const url = getWodUrlFromId(id)
-    console.log(url)
     await page.goto(url)
 
     const image = await getImageFromPage(page)
+    const type = await getWodTypeFromPage(page)
 
     await browser.close()
     res.status(201).json({
       wod: {
-        type: 'rest',
+        id,
+        type,
         image
       }
     })
   } catch (err) {
     console.log(err)
-    await page.screenshot({ path: `${moment().valueOf()}.png` })
+
+    try {
+      // you can probably not write in Google App Engine, so this will probably fail
+      await page.screenshot({ path: `screenshots/${moment().valueOf()}.png` })
+    } catch (err) {
+      // shallow error
+    }
+
     res.status(200).json({
       error: err.message
     })

@@ -3,7 +3,7 @@ import { gql } from 'apollo-server'
 export const typeDefs = gql`
   enum WodType {
     time
-    load
+    loads
     rounds
     rest
   }

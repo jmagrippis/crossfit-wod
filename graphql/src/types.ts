@@ -22,7 +22,7 @@ export interface LocationInput {
 
 export enum WodType {
   Time = 'time',
-  Load = 'load',
+  Loads = 'loads',
   Rounds = 'rounds',
   Rest = 'rest'
 }
