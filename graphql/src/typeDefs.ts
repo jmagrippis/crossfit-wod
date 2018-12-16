@@ -13,10 +13,21 @@ export const typeDefs = gql`
     url: String!
   }
 
+  input LocationInput {
+    name: String!
+    url: String!
+  }
+
   type WodImage {
     url: String!
     credit: String
     location: Location
+  }
+
+  input WodImageInput {
+    url: String!
+    credit: String
+    location: LocationInput
   }
 
   type Wod {
@@ -25,12 +36,18 @@ export const typeDefs = gql`
     image: WodImage!
   }
 
+  input WodInput {
+    id: Int!
+    type: WodType!
+    image: WodImageInput!
+  }
+
   type Query {
     getWod(id: Int!): Wod
     latestWod: Wod!
   }
 
   type Mutation {
-    createWod(id: Int!, type: WodType!): Wod!
+    createWod(wod: WodInput!): Wod!
   }
 `

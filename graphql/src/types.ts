@@ -1,3 +1,25 @@
+export interface WodInput {
+  id: number
+
+  type: WodType
+
+  image: WodImageInput
+}
+
+export interface WodImageInput {
+  url: string
+
+  credit?: string | null
+
+  location?: LocationInput | null
+}
+
+export interface LocationInput {
+  name: string
+
+  url: string
+}
+
 export enum WodType {
   Time = 'time',
   Load = 'load',
@@ -61,7 +83,5 @@ export interface GetWodQueryArgs {
   id: number
 }
 export interface CreateWodMutationArgs {
-  id: number
-
-  type: WodType
+  wod: WodInput
 }
