@@ -26,6 +26,7 @@ export const typeDefs = gql`
   }
 
   type Query {
+    getWod(id: Int!): Wod
     latestWod: Wod!
   }
 

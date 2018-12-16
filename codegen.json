@@ -2,7 +2,7 @@
   "schema": "http://localhost:3011",
   "overwrite": true,
   "generates": {
-    "./graphql/src/types.d.ts": {
+    "./graphql/src/types.ts": {
       "plugins": ["typescript-common", "typescript-server"]
     }
   }

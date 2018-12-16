@@ -22,6 +22,8 @@ export type Upload = any;
 // ====================================================
 
 export interface Query {
+  getWod?: Wod | null;
+
   latestWod: Wod;
 }
 
@@ -55,6 +57,9 @@ export interface Mutation {
 // Arguments
 // ====================================================
 
+export interface GetWodQueryArgs {
+  id: number;
+}
 export interface CreateWodMutationArgs {
   id: number;
 

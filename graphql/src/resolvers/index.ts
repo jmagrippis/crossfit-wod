@@ -1,8 +1,14 @@
-import { Wod, CreateWodMutationArgs } from "../types";
+import { Wod, CreateWodMutationArgs, WodType } from "../types";
 
-const latestWod = () => ({
+const getWod = (): Wod => null;
+
+const latestWod = (): Wod => ({
   id: 181020,
-  type: "rest"
+  type: WodType.Rest,
+  image: {
+    url:
+      "https://d1s2fu91rxnpt4.cloudfront.net/mainsite/w20181020/raw/c6fddc556a0208f_718463.jpg"
+  }
 });
 
 export const createWod = (
@@ -19,6 +25,7 @@ export const createWod = (
 
 export const resolvers = {
   Query: {
+    getWod,
     latestWod
   },
   Mutation: {
